@@ -14,7 +14,7 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UyUchun - Интернет-магазин бытовой техники</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -52,7 +52,7 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
                     <button onclick="showLocation()" class="text-gray-600 hover:text-blue-600 transition" title="Наши магазины">
                         <i class="fas fa-map-marker-alt text-xl"></i>
                     </button>
-                    <a href="../contact.php" class="text-gray-600 hover:text-blue-600 transition">
+                    <a href="/contact.php" class="text-gray-600 hover:text-blue-600 transition">
                         <i class="fas fa-envelope text-xl"></i>
                     </a>
                 </div>
@@ -105,7 +105,7 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
                 <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6" id="productsGrid">
                     <?php foreach ($products as $product): ?>
                     <div class="product-card bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden" data-brand="<?php echo $product['brand']; ?>">
-                        <a href="../product.php?id=<?php echo $product['id']; ?>">
+                        <a href="/product.php?id=<?php echo $product['id']; ?>">
                             <div class="h-48 bg-gray-100 relative overflow-hidden">
                                 <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>" class="w-full h-full object-contain p-3 hover:scale-105 transition-transform duration-300">
                             </div>
@@ -136,10 +136,9 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
                 <div>
                     <h4 class="font-bold text-lg mb-4 text-blue-400">О нас</h4>
                     <p class="text-gray-300 text-sm leading-relaxed">
-                        UyUchun — это сеть магазинов бытовой техники и электроники, ориентированная на предоставление клиентам возможности покупать товары в рассрочку без лишних усилий. Сеть была основана в 2019 году. Основной концепцией магазина является «Один документ, одна цена, одна idea». Поэтому оформить банковскую рассрочку и купить желаемый товар можно без лишней суеты и дополнительных документов всего за несколько минут. Товары можно оформить в рассрочку без первоначального взноса на 12, 18 или 24 месяцев. Более того, в UyUchun широкий ассортимент товаров, сертифицированная техника мировых брендов, с заводской гарантией и последующим сервисом, а также квалифицированный персонал, который всегда готов помочь сделать клиенту правильный выбор.
+                        UyUchun — это сеть магазинов бытовой техники и электроники, ориентированная на предоставление клиентам возможности покупать товары в рассрочку без лишних усилий. Сеть была основана в 2019 году. Основной концепцией магазина является «Один документ, одна цена, одна idea».
                     </p>
                 </div>
-
                 <div>
                     <h4 class="font-bold text-lg mb-4 text-blue-400">Контакты</h4>
                     <ul class="space-y-3 text-gray-300 text-sm">
@@ -156,7 +155,6 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
                         </li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="font-bold text-lg mb-4 text-blue-400">Информация</h4>
                     <ul class="space-y-2 text-sm">
@@ -164,7 +162,6 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
                         <li><a href="https://t.me/begzodsunnatovich" target="_blank" class="text-gray-300 hover:text-blue-400 transition">Возврат и обмен</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="font-bold text-lg mb-4 text-blue-400">Мы в соцсетях</h4>
                     <div class="flex space-x-4">
@@ -240,10 +237,10 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
         </div>
     </div>
 
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     <script>
         function setCurrency(currency) {
-            fetch('../api.php?action=set_currency', {
+            fetch('/api.php?action=set_currency', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -305,7 +302,7 @@ $currentCurrency = isset($_SESSION['currency']) ? $_SESSION['currency'] : 'UZS';
             btn.textContent = 'Отправка...';
             btn.disabled = true;
             
-            fetch('../api.php?action=order', {
+            fetch('/api.php?action=order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
